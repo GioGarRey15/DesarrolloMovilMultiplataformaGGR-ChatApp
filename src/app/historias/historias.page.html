@@ -1,0 +1,61 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="secondary">
+      <ion-button>
+        <ion-icon slot="icon-only" name="camera"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-button id="menuButton" (click)="presentPopover($event)">
+        <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Estados</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <br>
+
+  <!-- Estado del usuario -->
+  <ion-list>
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src="https://res.cloudinary.com/unix-center/image/upload/c_limit,dpr_3.0,f_auto,fl_progressive,g_center,h_580,q_75,w_906/k6he0ktcmvcyq27zuhtz.jpg">
+      </ion-avatar>
+      <ion-label>
+        <h2>Mi estado</h2>
+        <p>Hace 10 minutos</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-list-header>Recientes</ion-list-header>
+
+    <!-- Lista de estados -->
+    <ion-item *ngFor="let story of stories" (click)="viewStory(story)">
+      <ion-avatar slot="start">
+        <img [src]="story.image" alt="Estado">
+      </ion-avatar>
+      <ion-label>
+        <h2>{{ story.name }}</h2>
+        <p>{{ story.time }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <!-- Contenedor de Historias estilo WhatsApp -->
+  <div class="stories-container">
+    <div class="story" *ngFor="let story of stories" (click)="showStory(story.image)">
+      <img [src]="story.image" alt="{{story.name}}">
+    </div>
+  </div>
+
+  <!-- Vista de historia emergente con progress bar -->
+  <div class="story-view" id="storyView" (click)="hideStory()">
+    <div class="progress-bar"><div class="progress" id="progress"></div></div>
+    <img id="storyImage" src="" alt="Story">
+  </div>
+</ion-content>

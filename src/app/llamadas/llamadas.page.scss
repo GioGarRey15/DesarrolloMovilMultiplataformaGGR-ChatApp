@@ -1,0 +1,34 @@
+ion-list {
+    padding: 10px;
+  }
+  
+  ion-item {
+    --padding-start: 12px;
+    --inner-padding-end: 12px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 8px;
+  }
+  
+  .call-time {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .call-received {
+    color: green;
+  }
+  
+  .call-dialed {
+    color: blue;
+  }
+  
+  .call-missed {
+    color: red;
+  }
+  
+  ion-avatar img {
+    border-radius: 50%;
+    border: 2px solid #ccc;
+  }
+  

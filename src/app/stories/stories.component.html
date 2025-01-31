@@ -1,0 +1,53 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="secondary">
+      <ion-button>
+        <ion-icon slot="icon-only" name="camera"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-button id="menuButton">
+        <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Estados estilo WhatsApp</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="stories-container">
+    <div class="story" *ngFor="let historia of historias" (click)="showStory(historia.image)">
+      <img [src]="historia.image" [alt]="historia.description">
+      <div class="story-overlay">
+        <p>{{ historia.description }}</p>
+      </div>
+  
+  
+
+  <div class="story-view" id="storyView" (click)="hideStory()">
+    <div class="progress-bar"><div class="progress" id="progress"></div>
+    <img id="storyImage" src="" alt="Story">
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-segment mode="md" value="chats">
+      <ion-segment-button value="home" routerLink="/chat">
+        <ion-icon name="chatbubbles"></ion-icon>
+        <ion-label>Chats</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="chats" routerLink="/historias">
+        <ion-icon name="home"></ion-icon>
+        <ion-label>Estados</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="settings">
+        <ion-icon name="settings"></ion-icon>
+        <ion-label>Llamadas</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="secondary">
+      <ion-button>
+        <ion-icon slot="icon-only" name="camera"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-button id="menuButton" (click)="presentPopover($event)">
+        <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Llamadas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item *ngFor="let call of callHistory">
+      <ion-avatar slot="start">
+        <img [src]="call.avatar" alt="Avatar">
+      </ion-avatar>
+      <ion-label>
+        <h2>{{ call.name }}</h2>
+        <p class="call-time">{{ call.time }}</p>
+        <p [ngClass]="getCallTypeClass(call.type)">
+          <ion-icon [name]="getCallIcon(call.type)"></ion-icon>
+          {{ getCallTypeLabel(call.type) }} - {{ call.duration }}
+        </p>
+      </ion-label>
+      <ion-button slot="end" fill="clear" color="primary">
+        <ion-icon name="call"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>

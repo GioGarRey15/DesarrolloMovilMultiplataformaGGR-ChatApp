@@ -1,0 +1,43 @@
+:host {
+  --whatsapp-green: #075E54;
+  --whatsapp-light-green: #25D366;
+  --whatsapp-dark: #121B22;
+}
+
+.ajustes-content {
+  background-color: var(--whatsapp-dark);
+  color: white;
+}
+
+.profile-container {
+  background-color: var(--whatsapp-green);
+  padding: 15px;
+  border-radius: 10px;
+  margin: 15px;
+}
+
+.profile-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+}
+
+.profile-info,
+.profile-status {
+  font-size: 14px;
+  color: #cfcfcf;
+}
+
+.settings-list ion-item {
+  --background: transparent;
+  --color: white;
+  border-bottom: 1px solid #2A2F32;
+}
+
+.settings-list ion-icon {
+  color: var(--whatsapp-light-green);
+}
+
+.settings-list ion-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}

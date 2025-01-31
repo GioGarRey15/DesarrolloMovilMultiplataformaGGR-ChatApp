@@ -1,0 +1,68 @@
+.stories-container {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  background-color: #121212; /* Color oscuro como WhatsApp */
+}
+
+
+.story img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: 2px solid #128C7E; /* Borde verde como en WhatsApp */
+  object-fit: cover;
+}
+
+.story-info {
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+
+.story-info span {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.story-info small {
+  font-size: 13px;
+  color: gray;
+}
+
+/* Diseño del visor de historias */
+.story-view {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.story-view img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Barra de progreso */
+.progress-bar {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  height: 3px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.progress {
+  height: 100%;
+  background-color: white;
+  width: 0%;
+  transition: width 3s linear;
+}

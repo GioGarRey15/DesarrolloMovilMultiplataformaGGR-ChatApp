@@ -1,0 +1,49 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="perfil-container">
+    <div class="perfil-avatar">
+      <ion-avatar slot="start">
+        <img src="https://res.cloudinary.com/unix-center/image/upload/c_limit,dpr_3.0,f_auto,fl_progressive,g_center,h_580,q_75,w_906/k6he0ktcmvcyq27zuhtz.jpg" alt="Avatar de GioGarRey">
+      </ion-avatar>
+      <ion-button class="btn-camera">
+        <ion-icon name="camera-outline"></ion-icon>
+      </ion-button>
+    </div>
+  </div>
+
+  <ion-list>
+    <ion-item>
+      <ion-icon slot="start" name="person-outline"></ion-icon>
+      <ion-label>
+        <h2>Nombre</h2>
+        <p>⚡GioGarRey⚡</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon slot="start" name="information-circle-outline"></ion-icon>
+      <ion-label>
+        <h2>Info.</h2>
+        <p>¡Hola, estoy usando ChatApp!</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon slot="start" name="call-outline"></ion-icon>
+      <ion-label>
+        <h2>Teléfono</h2>
+        <p>+52 271 101 7383</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

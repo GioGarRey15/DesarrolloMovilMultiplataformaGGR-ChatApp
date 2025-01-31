@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="secondary">
+      <ion-button>
+      </ion-button>
+      <ion-icon slot="icon-only" name="camera"></ion-icon>
+      <ion-button>
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-button id="menuButton" (click)="presentPopover($event)">
+        <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>ChatApp</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <app-item-chat *ngFor="let chat of chats" 
+                   [avatarUrl]="chat.avatarUrl" 
+                   [username]="chat.username" 
+                   [message]="chat.message" 
+                   [date]="chat.date">
+    </app-item-chat>
+  </ion-list>
+</ion-content>
+
+<!-- POPUP MENU -->
+<ion-popover trigger="menuButton" trigger-action="click">
+  <ion-content class="ion-padding">
+    <ion-list>
+      <ion-item button>Opción 1</ion-item>
+      <ion-item button>Opción 2</ion-item>
+      <ion-item button>Opción 3</ion-item>
+      <ion-item button>Opción 4</ion-item>
+      <ion-item button>Opción 5</ion-item>
+    </ion-list>
+  </ion-content>
+</ion-popover>
